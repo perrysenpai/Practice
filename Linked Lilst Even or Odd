@@ -1,0 +1,11 @@
+int isLengthEvenorOdd(Node head1)
+	{
+	    while(head1!=null && head1.next!=null)
+	    {
+	        head1=head1.next.next;
+	    }
+	    
+	    if(head1==null)
+	    return 0;
+	    return 1;
+	}
