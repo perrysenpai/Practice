@@ -1,0 +1,14 @@
+public void deleteAlternate (Node head){
+        Node n=head;
+        while(head!=null && head.next!=null)
+        {
+            head.next=head.next.next;
+            head=head.next;
+        }
+        
+        while(n!=null)
+        {
+            System.out.print(n.data+" ");
+            n=n.next;
+        }
+    }
