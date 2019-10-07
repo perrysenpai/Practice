@@ -1,0 +1,22 @@
+public int sum(Node head, int k){
+      int sum=0;
+      Node n=head;
+      int count=0;
+      while(n!=null)
+      {
+          n=n.next;
+          count++;
+      }
+      
+      int rem=count-k+1;
+      count=0;
+      while(head!=null)
+      {
+          count++;
+          if(count>=rem)
+          sum=sum+head.data;
+          head=head.next;
+      }
+      
+      return sum;
+    }
