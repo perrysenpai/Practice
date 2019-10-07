@@ -1,0 +1,23 @@
+public static Node reverse(Node node, int k)
+    {
+        Node head=node;
+        int c=0;
+        Node curr=node;
+        Node prev=null;
+        Node next=null;
+        while(curr!=null && c<k)
+        {
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+            c++;
+        }
+        
+        if(c==k)
+            {
+                head.next=reverse(curr, k);
+            }
+            
+        return prev;
+    }
