@@ -1,0 +1,25 @@
+public Node rotate(Node head, int k) {
+       Node h=head;
+       int count=1;
+       while(h!=null  && count<k)
+       {
+           h=h.next;
+           count++;
+       }
+       
+       
+       if(h==null)
+       return head;
+       
+       Node next=h.next;
+       h.next=null;
+       h=next;
+       
+       while(h.next!=null)
+       h=h.next;
+       
+       h.next=head;
+       
+       return next;
+       
+    }
