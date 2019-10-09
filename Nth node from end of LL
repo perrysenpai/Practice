@@ -1,0 +1,20 @@
+int getNthFromLast(Node h, int n)
+    {
+        Node head=h;
+        int count=0;
+    	while(head!=null)
+    	{
+    	    count++;
+    	    head=head.next;
+    	}
+    	if(n>count)
+    	return -1;
+    	int diff=count-n+1;
+        count=0;
+    	while(diff-->1)
+    	{
+    	    h=h.next;
+    	}
+        
+        return h.data;
+    }
