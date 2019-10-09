@@ -18,3 +18,23 @@ int getNthFromLast(Node h, int n)
         
         return h.data;
     }
+    
+
+APPROACH 2
+    
+void printNthFromLast(struct Node* head, int n) 
+{ 
+    static int i = 0; 
+    if (head == NULL) 
+        return; 
+    printNthFromLast(head->next, n); 
+    if (++i == n) 
+        printf("%d", head->data); 
+} 
+
+
+APPROACH 3:
+Method 2 (Use two pointers)
+Maintain two pointers – reference pointer and main pointer. Initialize both reference and main pointers to head.
+First, move reference pointer to n nodes from head. Now move both pointers one by one until the reference pointer reaches the end.
+Now the main pointer will point to nth node from the end. Return the main pointer.
