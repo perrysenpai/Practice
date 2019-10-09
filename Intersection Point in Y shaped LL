@@ -1,0 +1,23 @@
+int intersectPoint(Node headA, Node headB)
+	{
+         HashSet<Node> set=new HashSet<Node>();
+         while(headA!=null)
+         {
+             set.add(headA);
+             headA=headA.next;
+         }
+         
+         while(headB!=null)
+         {
+             if(set.contains(headB))
+             return headB.data;
+             headB=headB.next;
+         }
+         
+         
+         return -1;
+	}
+  
+  
+  ANOTHER METHOD IS traversing the  llonger list till the difference in length of the lists. now both lists are at euqal leght. traverse both and check for ewquality.
+  
