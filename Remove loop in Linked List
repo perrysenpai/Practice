@@ -1,0 +1,14 @@
+public static void removeTheLoop(Node head)
+    {
+        HashSet<Node> set=new HashSet<Node>();
+        while(head!=null)
+        {
+            set.add(head);
+            if(set.contains(head.next))
+            {
+            head.next=null;
+            break;
+            }
+            head=head.next;
+        }
+    }
