@@ -1,0 +1,35 @@
+class GfG
+{
+    Node flatten(Node root)
+    {
+        Node node=root;
+	    PriorityQueue<Node> pq = new PriorityQueue<Node>(new Comparator<Node>() { 
+            public int compare(Node a, Node b) 
+            { return a.data-b.data; }
+	        }
+	        );
+        
+        while(node!=null)
+        {
+            pq.add(node);
+            node=node.next;
+        }
+        
+	    Node n=new Node(0);
+	    Node m=n;
+	    while(!pq.isEmpty())
+	    {
+	        Node x=pq.remove();
+	        //System.out.print(x.data+" is removed ");
+            n.bottom=new Node(x.data);
+            n=n.bottom;
+            if(x.bottom!=null)
+            {
+            pq.add(x.bottom);
+            //System.out.println(x.bottom.data+" is added ");
+            }
+	    }
+
+	    return m.bottom;
+    }
+}
